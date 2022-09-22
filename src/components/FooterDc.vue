@@ -34,10 +34,14 @@ name:'FooterDC'
         justify-content: space-between;
     @include flexRowAlignCenter;
       button{
+        cursor: pointer;
         background-color: rgb(56, 56, 56);
         border: 2px solid rgb(7, 138, 252);
         color: white;
         padding: 15px;
+        &:hover{
+            transform: scale(1.2)
+        }
       }
       .contsocial{
         @include flexRowAlignCenter;
@@ -48,6 +52,9 @@ name:'FooterDC'
         a{
             margin: 0 10px;
             cursor: pointer;
+            &:hover{
+            transform: scale(1.1)
+        }
         }
       }
      
