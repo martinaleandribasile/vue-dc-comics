@@ -32,13 +32,14 @@ name:'ShopDC',
 </script>
 
 <style scoped lang="scss">
+    $colorlightblu: rgb(7, 138, 252);
     @mixin flexRowAlignCenter{
            display: flex;
            flex-direction: row;
            align-items: center;
        }
-   .contContents{ 
-       background-color: rgb(7, 138, 252);
+   .contContents{
+       background-color: $colorlightblu;
        height: 200px; 
        .containerdef{
             height: 100%;
@@ -50,9 +51,7 @@ name:'ShopDC',
                 margin: 0 10px;
                 @include flexRowAlignCenter;
                 &:hover{
-                    padding: 10px;
-                    border: 5px solid blue;
-                    border-radius: 10px;
+                   transform: scale(1.2);
                 }
                 img{
                     height: 70px;
@@ -61,6 +60,7 @@ name:'ShopDC',
                 }
                 p{
                     color: white;
+                    font-size: 13px;
                 }
             }
        }

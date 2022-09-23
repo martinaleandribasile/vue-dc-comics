@@ -6,16 +6,7 @@
         </div>
         <div class="containerul">
             <ul>
-                <li><a href="#">CHARACTERS</a></li>
-                <li><a href="#">COMICS</a></li>
-                <li><a href="#">MOVIES</a></li>
-                <li><a href="#">TV</a></li>
-                <li><a href="#">GAMES</a></li>
-                <li><a href="#">COLLECTIBLES</a></li>
-                <li><a href="#">VIDEOS</a></li>
-                <li><a href="#">FANS</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SHOP</a></li>
+                <li @click="changeActive(index)" v-for="(element,index) in linkarray" :key="element.name" :class="{active: element.active}"><a :class="{active: element.active}"  href="element.url">{{element.name}}</a></li>
             </ul>
         </div>
    </div>
@@ -23,8 +14,31 @@
 </template>
 
 <script>
+
 export default {
 name: 'HeaderDc',
+props:{
+    linkarray:Array
+},
+data(){
+    return{
+        activeIndex : 0
+    }
+},
+methods:{
+    changeActive(i) {
+        this.activeIndex = i
+        this.linkarray.forEach((element,index)=>{
+            if(this.activeIndex===index){
+                element.active=true            
+            }else{
+                element.active=false
+            }
+        })
+      
+    }
+
+}
 }
 </script>
 
@@ -47,16 +61,17 @@ name: 'HeaderDc',
                 height: 100%;
                 list-style: none;
                 li{
+                    cursor: pointer;
                     @include flexRowAlignCenter;
                     height: 100%;
-                    &:hover{
+                    &.active{
                         border-bottom: 5px solid blue;
                     }
                     a{
                         color: black;
                         text-decoration: none;
                         font-weight: bold;
-                        &:hover{
+                        &.active{
                         color: blue;
                         }
                     }
