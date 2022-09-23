@@ -3,7 +3,7 @@
     <HeaderDc :linkarray='links'/>
     <JumbotroneDc/>
     <ContentDC :arrayComics='dcComics'/>
-    <ShopDC/>
+    <ShopDC :shoplink='linkshop'/>
     <LinkCD/>
     <FooterDC/>
   </div>
@@ -17,7 +17,8 @@ import LinkCD from './components/LinkDC.vue';
 import FooterDC from './components/FooterCompDC.vue';
 import {links} from '@/data/LinksHeader.js';
 import{dcComics} from '@/data/dcComics.js'
-import JumbotroneDc from '@/components/JumbotroneDC.vue'
+import JumbotroneDc from '@/components/JumbotroneDC.vue';
+import {linkshop} from '@/data/linkShop'
 export default {
   name: 'App',
   components: {
@@ -31,7 +32,8 @@ export default {
 data(){
   return{
     links,
-    dcComics
+    dcComics,
+    linkshop,
   }
 }
 }

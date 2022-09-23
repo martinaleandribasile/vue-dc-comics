@@ -1,25 +1,9 @@
 <template>
     <div class="contContents">
         <div class="containerdef">
-           <a>
-                <img src="../assets/img/buy-comics-digital-comics.png" alt="">
-                <p>DIGITAL COMICS</p>
-           </a>
-           <a>
-                <img src="../assets/img/buy-comics-merchandise.png" alt="">
-                <p>DC MERCHANDISE</p>
-           </a>
-           <a>
-                <img src="../assets/img/buy-comics-subscriptions.png" alt="">
-                <p>SUBSCRIPTION</p>
-           </a>
-           <a>
-                <img src="../assets/img/buy-comics-shop-locator.png" alt="">
-                <p>COMIC SHOP LOCATION</p>
-           </a>
-           <a>
-                <img src="../assets/img/buy-dc-power-visa.svg" alt="">
-                <p>DC POWER VISA</p>
+           <a v-for='shop in shoplink' :key="shop.text">
+                <img :src=shop.ind alt="">
+                <p>{{shop.text}}</p>
            </a>
         </div>
   </div>
@@ -28,6 +12,9 @@
 <script>
 export default {
 name:'ShopDC',
+props:{
+    shoplink:Array
+}
 }
 </script>
 
