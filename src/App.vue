@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import ContentDC from './components/ContentsDc.vue';
-import HeaderDc from './components/HeaderDc.vue';
+import ContentDC from './components/ContentsComp.vue';
+import HeaderDc from './components/HeaderCompDC.vue';
 import ShopDC from './components/ShopDC.vue';
-import LinkCD from './components/LinkCD.vue';
-import FooterDC from './components/FooterDC.vue';
+import LinkCD from './components/LinkDC.vue';
+import FooterDC from './components/FooterCompDC.vue';
 
 export default {
   name: 'App',
